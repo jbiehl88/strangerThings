@@ -1,17 +1,29 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Profile from "./components/Profile";
+import Posts from "./components/Posts";
 
 function App() {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <div id='container'>
+      <Navbar />
+      <Switch>
+        <Route>
+          <Home />
+        </Route>
+        <Route>
+          <Posts />
+        </Route>
+        <Route>
+          <Profile />
+        </Route>
+      </Switch>
+      
     </div>
+    </BrowserRouter>
   );
 }
 
