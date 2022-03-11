@@ -1,29 +1,29 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import Posts from "./components/Posts";
+import NewComponent from "./components/NewComponent";
 
 function App() {
   return (
-    <BrowserRouter>
-    <div id='container'>
+    <div id="container">
+      <h2>Hello World</h2>
       <Navbar />
       <Switch>
-        <Route>
+        <Route exact path="/">
           <Home />
         </Route>
-        <Route>
+        <Route path="/posts">
+          {/* <NewComponent /> */}
           <Posts />
         </Route>
-        <Route>
+        <Route path="/profile">
           <Profile />
         </Route>
       </Switch>
-      
     </div>
-    </BrowserRouter>
   );
 }
 
