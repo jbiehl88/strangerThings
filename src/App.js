@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import Posts from "./components/Posts";
-import NewComponent from "./components/NewComponent";
 
 function App() {
   return (

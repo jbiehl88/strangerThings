@@ -19,10 +19,30 @@ import react from "react"
 //   const data = await response.json();
 //   return data;
 // };
-export const getPosts = async () => {
+
+export const fetchPosts = async () => {
 
     const response = await fetch(`https://strangers-things.herokuapp.com/api/2202-FTB-ET-WEB-FT/posts`)
     const result = await response.json()
     // console.log(result)
     return result.data.posts
     }
+
+
+export const updatePost = async (updateObj, token, postId) => {
+    const response = await fetch(
+        `https://strangers-things.herokuapp.com/api/2202-FTB-ET-WEB-FT/posts/${postId}`,
+        {
+            method: "PATCH",
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+            post: updateObj,
+        }),
+        }
+        )
+    const data = await response.json()
+    return data        
+}
