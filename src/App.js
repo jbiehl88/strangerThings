@@ -16,7 +16,6 @@ function App() {
           <Home />
         </Route>
         <Route path="/posts">
-          {/* <NewComponent /> */}
           <Posts />
         </Route>
         <Route path="/profile">
