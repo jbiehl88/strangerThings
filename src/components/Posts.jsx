@@ -8,24 +8,23 @@ const Posts = ({ token }) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    console.log('in useEffect()')
     const getPosts = async () => {
-      const result = await fetchPosts();
-      // console.log(result)
-      setPosts(result);
+      const postsFromAPI = await fetchPosts();
+      setPosts(postsFromAPI);
     };
+
     getPosts();
   }, []);
 
+  console.log("Hi Im the compoenent I have mounted on the page");
+  console.log("Posts: ", posts)
+
   return (
     <div>
+      Hello, I'm the Posts component
       {posts.map((post, i) => {
-        console.log(post)
-        return (
-          <SinglePost
-            key={`singlePostidx: ${i}`}
-            post={post}
-          />
-        );
+        return <SinglePost key={`singlePostidx: ${i}`} post={post} />;
       })}
     </div>
   );

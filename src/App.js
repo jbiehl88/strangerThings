@@ -1,29 +1,32 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import Posts from "./components/Posts";
-import Login from "./components/Login"
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
     <div id="container">
-      <h2>Hello World</h2>
       <Navbar />
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
         <Route path="/posts">
           <Posts />
+        </Route>
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+        {/* <Route path="/home">
+          <Home />
         </Route>
         <Route path="/profile">
           <Profile />
         </Route>
-        <Route path="/Login">
+        <Route path="/login">
           <Login />
-        </Route>
+        </Route> */}
       </Switch>
     </div>
   );

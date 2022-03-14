@@ -2,7 +2,7 @@ import React from "react";
 
 
 const SinglePost = ({post}) => {
-   console.log(post)
+ 
     return (
         <div className="SinglePost">
             <h3>{post.title}</h3>
