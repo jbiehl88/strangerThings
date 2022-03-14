@@ -18,15 +18,16 @@ function App() {
         <Route path="/signup">
           <SignUp />
         </Route>
-        {/* <Route path="/home">
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/home">
           <Home />
         </Route>
         <Route path="/profile">
           <Profile />
         </Route>
-        <Route path="/login">
-          <Login />
-        </Route> */}
+       
       </Switch>
     </div>
   );
