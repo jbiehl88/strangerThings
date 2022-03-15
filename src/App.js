@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -8,18 +8,20 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 
 function App() {
+const [isLoggedIn, setIsLoggedIn] = useState(false)
+
   return (
     <div id="container">
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <Switch>
         <Route path="/posts">
           <Posts />
         </Route>
         <Route path="/signup">
-          <SignUp />
+          <SignUp setIsLoggedIn={setIsLoggedIn}/>
         </Route>
         <Route path="/login">
-          <Login />
+          <Login setIsLoggedIn={setIsLoggedIn}/>
         </Route>
         <Route path="/home">
           <Home />
@@ -27,7 +29,6 @@ function App() {
         <Route path="/profile">
           <Profile />
         </Route>
-       
       </Switch>
     </div>
   );

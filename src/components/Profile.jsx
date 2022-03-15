@@ -1,17 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { getProfile } from "../api";
 
-const Profile = () => {                    // create state variables
+const Profile = () => {
+
+  const [userObj, setuserObj] = useState([])
   useEffect(() => {
-    const token = localStorage.getItem('token')
-    console.log(token)
+    const token = localStorage.getItem("token");
+    console.log(token);
     const getMe = async () => {
       const meFromAPI = await getProfile(token);
-      console.log(meFromAPI);
+      console.log(meFromAPI.data)
+      setuserObj(meFromAPI.data);
     };
     getMe();
   }, []);
-  return <div className="profile"></div>; // map through state variables
+  return <div className="profile">
+    <h2>{`User: ${userObj.username}`}</h2>
+    <h3></h3>
+
+
+  </div>; // map through state variables && make form for message
 };
 
 export default Profile;

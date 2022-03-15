@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { registerUser } from "../api";
 
-const SignUp = () => {
+const SignUp = ({setIsLoggedIn}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // result.data.token
@@ -14,6 +14,7 @@ const SignUp = () => {
           const result = await registerUser(username, password);
           console.log(result)
           localStorage.setItem("token", result.data.token);
+          setIsLoggedIn(true)
         }}
       >
         <input
