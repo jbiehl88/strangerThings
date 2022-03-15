@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { fetchPosts } from "../api/index";
+import { fetchPosts, createPost } from "../api/index";
 import SinglePost from "./SinglePost";
 
 const Posts = ({ token }) => {
@@ -15,11 +15,14 @@ const Posts = ({ token }) => {
   }, []);
 
   return (
-    <div>
-      {posts.map((post, i) => {
-        return <SinglePost key={`singlePostidx: ${i}`} post={post} />;
-      })}
-    </div>
+    <>
+      <div></div>
+      <div>
+        {posts.map((post, i) => {
+          return <SinglePost key={`singlePostidx: ${i}`} post={post} />;
+        })}
+      </div>
+    </>
   );
 };
 

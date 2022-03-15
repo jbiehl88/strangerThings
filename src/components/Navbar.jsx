@@ -9,6 +9,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
       {isLoggedIn ? (
         <div>
           <Link to="/profile">Profile</Link>
+          <Link to="/createpost">Create Post</Link>
           <button
             onClick={() => {
               setIsLoggedIn(false);

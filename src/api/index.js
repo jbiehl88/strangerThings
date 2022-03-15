@@ -2,7 +2,7 @@ import react from "react";
 
 export const registerUser = async (username, password) => {
   const response = await fetch(
-    "https://strangers-things.herokuapp.com/api/2022-FTB-ET-WEB-FT/users/register",
+    "https://strangers-things.herokuapp.com/api/2202-FTB-ET-WEB-FT/users/register",
     {
       method: "POST",
       headers: {
@@ -49,7 +49,7 @@ export const updatePost = async (updateObj, token, postId) => {
 
 export const loginUser = async (username, password) => {
   const response = await fetch(
-    "https://strangers-things.herokuapp.com/api/2022-FTB-ET-WEB-FT/users/login",
+    "https://strangers-things.herokuapp.com/api/2202-FTB-ET-WEB-FT/users/login",
     {
       method: "POST",
       headers: {
@@ -69,7 +69,7 @@ export const loginUser = async (username, password) => {
 
 export const getProfile = async (token) => {
   const response = await fetch(
-    "https://strangers-things.herokuapp.com/api/2022-FTB-ET-WEB-FT/users/me",
+    "https://strangers-things.herokuapp.com/api/2202-FTB-ET-WEB-FT/users/me",
     {
       headers: {
         "Content-Type": "application/json",
@@ -77,6 +77,24 @@ export const getProfile = async (token) => {
       },
     }
   );
-  const data = await response.json()
-  return data
+  const data = await response.json();
+  return data;
+};
+
+export const createPost = async (token, postObj) => {
+  const response = await fetch(
+    "https://strangers-things.herokuapp.com/api/2202-FTB-ET-WEB-FT/posts",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        post: postObj,
+      }),
+    }
+  );
+  const data = await response.json();
+  return data;
 };
