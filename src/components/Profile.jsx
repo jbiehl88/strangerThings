@@ -13,6 +13,7 @@ const Profile = () => {
     };
     getMe();
   }, []);
+  console.log(userObj);
   return (
     <div className="profile">
       <h2>{`User: ${userObj.username}`}</h2>

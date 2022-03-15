@@ -8,14 +8,6 @@ const CreatePost = ({ token }) => {
   const [location, setLocation] = useState("");
   const [deliver, setDeliver] = useState(false);
 
-  //   const creatingPost = async () => {
-  //     const createPostToAPI = await createPost(token);
-  //     creatingPost(createPostToAPI);
-  //     console.log(createPostToAPI);
-  //   };
-
-  //   creatingPost();
-
   return (
     <div className="posts">
       <form
@@ -29,11 +21,9 @@ const CreatePost = ({ token }) => {
             price,
             deliver,
           };
-          // console logging the post object that we will pass to createPost(token, postObj)
-          console.log(postObj);
+
           const token = localStorage.getItem("token");
           const result = await createPost(token, postObj);
-          console.log(result);
         }}
       >
         <h4>Title:</h4>
