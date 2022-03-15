@@ -16,10 +16,10 @@ const Profile = () => {
   }, []);
   return <div className="profile">
     <h2>{`User: ${userObj.username}`}</h2>
-    <h3></h3>
+    {/* <h3></h3> */}
 
 
-  </div>; // map through state variables && make form for message
+  </div>; // add messages -- map through state variables && make form for message
 };
 
 export default Profile;
