@@ -16,7 +16,6 @@ const Posts = ({ userObj }) => {
 
   return (
     <>
-      <div></div>
       <div>
         {posts.map((post, i) => {
           return (

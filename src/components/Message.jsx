@@ -15,7 +15,7 @@ const Message = ({ postId }) => {
             postId,
             messageContent
           );
-          console.log(response, "!!!!!!!!!!");
+          //   console.log(response, "!!!!!!!!!!");
         }}
       >
         <input
