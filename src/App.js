@@ -7,6 +7,7 @@ import Posts from "./components/Posts";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import CreatePost from "./components/CreatePost";
+import Message from "./components/Message";
 import { fetchMe } from "./api";
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
       getMe();
     }
   }, []);
-  console.log(userObj);
+  // console.log(userObj);
   return (
     <div id="container">
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />

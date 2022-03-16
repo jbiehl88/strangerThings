@@ -126,3 +126,26 @@ export const fetchMe = async (token) => {
   const data = await response.json();
   return data;
 };
+
+export const fetchMessage = async (token, postId, messageContent) => {
+  try {
+    const response = await fetch(
+      `https://strangers-things.herokuapp.com/api/2202-FTB-ET-WEB-FT/posts/${postId}/messages`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          message: {
+            content: messageContent,
+          },
+        }),
+      }
+    );
+    return response.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
