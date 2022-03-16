@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { createPost } from "../api";
 
 const CreatePost = ({ token }) => {
@@ -7,7 +8,7 @@ const CreatePost = ({ token }) => {
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
   const [deliver, setDeliver] = useState(false);
-
+  let history = useHistory();
   return (
     <div className="posts">
       <form
@@ -24,6 +25,7 @@ const CreatePost = ({ token }) => {
 
           const token = localStorage.getItem("token");
           const result = await createPost(token, postObj);
+          history.push("/posts");
         }}
       >
         <h4>Title:</h4>

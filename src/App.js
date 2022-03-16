@@ -7,23 +7,29 @@ import Posts from "./components/Posts";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import CreatePost from "./components/CreatePost";
+import { fetchMe } from "./api";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const [userObj, setUserObj] = useState({});
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
+    const localStorageToken = localStorage.getItem("token");
+    async function getMe() {
+      const data = await fetchMe(localStorageToken);
+      setUserObj(data.data);
+    }
+    if (localStorageToken) {
       setIsLoggedIn(true);
+      getMe();
     }
   }, []);
-
+  console.log(userObj);
   return (
     <div id="container">
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Switch>
         <Route path="/posts">
-          <Posts />
+          <Posts userObj={userObj} />
         </Route>
         <Route path="/signup">
           <SignUp setIsLoggedIn={setIsLoggedIn} />

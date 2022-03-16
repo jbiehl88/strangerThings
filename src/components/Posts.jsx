@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { fetchPosts, createPost } from "../api/index";
+import { fetchPosts } from "../api/index";
 import SinglePost from "./SinglePost";
 
-const Posts = ({ token }) => {
+const Posts = ({ userObj }) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -19,7 +19,15 @@ const Posts = ({ token }) => {
       <div></div>
       <div>
         {posts.map((post, i) => {
-          return <SinglePost key={`singlePostidx: ${i}`} post={post} />;
+          return (
+            <SinglePost
+              key={`singlePostidx: ${i}`}
+              post={post}
+              posts={posts}
+              setPosts={setPosts}
+              userObj={userObj}
+            />
+          );
         })}
       </div>
     </>
