@@ -9,6 +9,7 @@ import SignUp from "./components/SignUp";
 import CreatePost from "./components/CreatePost";
 import Message from "./components/Message";
 import { fetchMe } from "./api";
+import { Redirect } from "react-router-dom";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -29,6 +30,9 @@ function App() {
     <div id="container">
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Switch>
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
         <Route path="/posts">
           <Posts userObj={userObj} />
         </Route>

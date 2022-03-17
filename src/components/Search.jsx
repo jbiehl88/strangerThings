@@ -15,6 +15,7 @@ const Search = ({ posts, setFilteredPosts }) => {
     <form
       onSubmit={(e) => {
         e.preventDefault();
+        console.log(searchTerm);
         const filteredPosts = posts.filter((post) =>
           postMatches(post, searchTerm)
         );
