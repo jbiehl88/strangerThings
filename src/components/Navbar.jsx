@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
+  let history = useHistory();
   return (
     <div className="navBar">
       <Link to="/home">Home</Link>
@@ -14,6 +15,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
             onClick={() => {
               setIsLoggedIn(false);
               localStorage.removeItem("token");
+              history.push("/home");
             }}
           >
             Logout

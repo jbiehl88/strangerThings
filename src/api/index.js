@@ -149,3 +149,12 @@ export const fetchMessage = async (token, postId, messageContent) => {
     console.log(error);
   }
 };
+
+export const welcomeMessageCheck = (userObj) => {
+  const welcome = `Hello, welcome to Stranger's Things. Please sign in or sign up.`;
+  if (userObj === null) {
+    return welcome;
+  } else {
+    return `Hello, ${userObj.username} welcome back to Stranger's Things.`;
+  }
+};

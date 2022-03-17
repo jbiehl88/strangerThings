@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { loginUser } from "../api";
+import { useHistory } from "react-router-dom";
 
 const Login = ({ setIsLoggedIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  let history = useHistory();
   return (
     <div>
       <form
@@ -15,6 +16,7 @@ const Login = ({ setIsLoggedIn }) => {
           console.log(result);
           localStorage.setItem("token", result.data.token);
           setIsLoggedIn(true);
+          history.push("/profile");
         }}
       >
         <input

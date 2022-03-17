@@ -5,7 +5,7 @@
   height: 5rem;
   justify-content: space-evenly;
   align-items: center;
-  font-family: 'Material Icons';
+  /* font-family: 'Material Icons'; */
 }
 
 .posts {
@@ -17,7 +17,7 @@
 .inputPosts {
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .inputBoxPosts {

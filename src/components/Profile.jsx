@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { getProfile } from "../api";
-import { fetchMessage } from "../api";
 
 const Profile = () => {
   const [userObj, setuserObj] = useState([]);
@@ -12,11 +11,9 @@ const Profile = () => {
     };
     getMe();
   }, []);
-  // console.log(userObj.messages);
   return (
     <div className="profile">
       <h2>{`User: ${userObj.username}`}</h2>
-      <h3>Add messages here</h3>
       {userObj && userObj.messages && userObj.messages.length
         ? userObj.messages.map((message) => {
             console.log(message);
@@ -34,7 +31,3 @@ const Profile = () => {
 };
 
 export default Profile;
-
-// filter messages to make a new array of your messages
-// set username to localStorage
-//compare localStorage's username to message username (((messages.)))
