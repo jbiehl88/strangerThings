@@ -5,13 +5,13 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   let history = useHistory();
   return (
     <div className="navBar">
-      <Link to="/home">Home</Link>
-      <Link to="/posts">Posts</Link>
+      <Link className="navSpacing" to="/home">Home</Link>
+      <Link className="navSpacing" to="/posts">Posts</Link>
       {isLoggedIn ? (
-        <div>
-          <Link to="/profile">Profile</Link>
-          <Link to="/createpost">Create Post</Link>
-          <button
+        <div className="profilecreate">
+          <Link className="navSpacing" idName="profileId" to="/profile">Profile</Link>
+          <Link className="navSpacing" idName="createId" to="/createpost">Create Post</Link>
+          <button className="logbutton"
             onClick={() => {
               setIsLoggedIn(false);
               localStorage.removeItem("token");
