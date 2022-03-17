@@ -16,9 +16,9 @@ const SinglePost = ({ post, posts, setPosts, userObj }) => {
   const handleMessage = async () => {};
   return (
     <div className="SinglePost">
-      <h3>{post.title}</h3>
+      <h3>Title: {post.title}</h3>
       <span>
-        description: <p>{post.description}</p>
+        <strong>description: </strong>{post.description}
       </span>
       <p>{post.price}</p>
       {post.author._id === userObj._id ? (

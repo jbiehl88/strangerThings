@@ -8,7 +8,7 @@ const SignUp = ({ setIsLoggedIn }) => {
   let history = useHistory();
   return (
     <div>
-      <form
+      <form className="signupbar"
         onSubmit={async (e) => {
           e.preventDefault();
 
@@ -19,7 +19,7 @@ const SignUp = ({ setIsLoggedIn }) => {
           history.push("/profile");
         }}
       >
-        <input
+        <input className="signinput"
           value={username}
           type="text"
           placeholder="username"
@@ -27,10 +27,10 @@ const SignUp = ({ setIsLoggedIn }) => {
             setUsername(e.target.value);
           }}
         />
-        <input
+        <input className="signinput"
           value={password}
           type="text"
-          placeholder="username"
+          placeholder="password"
           onChange={(e) => {
             setPassword(e.target.value);
           }}

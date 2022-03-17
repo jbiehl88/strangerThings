@@ -12,7 +12,7 @@ const Search = ({ posts, setFilteredPosts }) => {
   }
 
   return (
-    <form
+    <form className="searchbar"
       onSubmit={(e) => {
         e.preventDefault();
         console.log(searchTerm);
@@ -22,18 +22,17 @@ const Search = ({ posts, setFilteredPosts }) => {
         setFilteredPosts(filteredPosts);
       }}
     >
-      <label htmlFor="header-search">
-        <span>Search posts</span>
+      <label className="searchpost" htmlFor="header-search">
       </label>
-      <input
+      <input className="searchpost"
         type="text"
         value={searchTerm}
-        placeholder="Search posts"
+        placeholder="Search Posts"
         onChange={(e) => {
           setSearchTerm(e.target.value);
         }}
       />
-      <button type="submit">Search</button>
+      <button className="searchpostbutton" type="submit">Search</button>
     </form>
   );
 };

@@ -14,7 +14,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="welcomehome">
       <h2>{welcomeMessageCheck(userObj)}</h2>
     </div>
   );
