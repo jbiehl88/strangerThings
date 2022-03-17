@@ -8,17 +8,16 @@ const Message = ({ postId }) => {
       <form
         onSubmit={async (e) => {
           e.preventDefault();
-          //   const result = await registerUser(username, password);
           const localStorageToken = localStorage.getItem("token");
           const response = await fetchMessage(
             localStorageToken,
             postId,
             messageContent
           );
-          //   console.log(response, "!!!!!!!!!!");
         }}
       >
         <input
+          class
           value={messageContent}
           type="text"
           placeholder="Type your message"

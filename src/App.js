@@ -7,7 +7,7 @@ import Posts from "./components/Posts";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import CreatePost from "./components/CreatePost";
-import Message from "./components/Message";
+import Footer from "./components/Footer";
 import { fetchMe } from "./api";
 import { Redirect } from "react-router-dom";
 
@@ -25,7 +25,6 @@ function App() {
       getMe();
     }
   }, []);
-  // console.log(userObj);
   return (
     <div id="container">
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
@@ -52,6 +51,7 @@ function App() {
           <CreatePost />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }

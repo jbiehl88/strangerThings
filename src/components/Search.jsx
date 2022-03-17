@@ -12,19 +12,19 @@ const Search = ({ posts, setFilteredPosts }) => {
   }
 
   return (
-    <form className="searchbar"
+    <form
+      className="searchbar"
       onSubmit={(e) => {
         e.preventDefault();
-        console.log(searchTerm);
         const filteredPosts = posts.filter((post) =>
           postMatches(post, searchTerm)
         );
         setFilteredPosts(filteredPosts);
       }}
     >
-      <label className="searchpost" htmlFor="header-search">
-      </label>
-      <input className="searchpost"
+      <label className="searchpost" htmlFor="header-search"></label>
+      <input
+        className="searchpost"
         type="text"
         value={searchTerm}
         placeholder="Search Posts"
@@ -32,7 +32,9 @@ const Search = ({ posts, setFilteredPosts }) => {
           setSearchTerm(e.target.value);
         }}
       />
-      <button className="searchpostbutton" type="submit">Search</button>
+      <button className="searchpostbutton" type="submit">
+        Search
+      </button>
     </form>
   );
 };

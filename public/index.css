@@ -1,23 +1,27 @@
-body{
-  background-color:azure;
+body {
+  background-color: azure;
+  min-height: 100vh;
 }
 
 .navBar {
+  position: sticky;
+  top: 0;
   display: flex;
   font-size: larger;
-  background-color:lightskyblue;
+  background-color: lightskyblue;
   width: 100%;
   height: 5rem;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   align-items: center;
-  font-family: 'Arimo', sans-serif;
-  font-weight:bolder;
+  font-family: "Arimo", sans-serif;
+  font-weight: bolder;
 }
 
 .posts {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 14%;
 }
 
 .inputPosts {
@@ -35,136 +39,149 @@ body{
   height: 10rem;
 }
 
-.navSpacing{
+.navSpacing {
   margin-left: 2%;
   margin-right: 2%;
 }
 
-.logbutton{
-  position:absolute;
+.logbutton {
+  position: absolute;
   top: 2.3rem;
   right: 2rem;
 }
 
-#createId{
-display:flex;
-flex-direction: row;
-justify-content: space-evenly;
-}
-
-#profileId{
-  display:flex;
+#createId {
+  display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
-.profilecreate{
-  display:flex;
+#profileId {
+  display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
-.welcomehome{
+.profilecreate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.welcomehome {
   text-align: center;
   font-weight: bolder;
   font-size: larger;
-  font-family: 'Arimo', sans-serif;
+  font-family: "Arimo", sans-serif;
   padding: 5rem;
 }
 
-.profile{
-  text-align:center;
+.profile {
+  text-align: center;
   align-items: center;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  grid-column: auto;  
-  font-family: 'Ubuntu Mono', monospace;
-  font-size:large;
+  grid-column: auto;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: large;
 }
 
-.Messages{
+.Messages {
   border: 1px solid black;
   background-color: aliceblue;
   margin: 1rem;
-  width:50%;
+  width: 50%;
 }
 
-.SinglePost{
-  text-align:justify;
+.SinglePost {
+  text-align: justify;
   border: 1px solid black;
   background-color: aliceblue;
   margin: 1rem;
-  width:90%;
+  width: 90%;
   padding: 2rem;
   align-items: center;
-  font-family: 'Arimo', sans-serif;
+  font-family: "Arimo", sans-serif;
 }
 
-.searchpost{
+.searchpost {
   align-items: center;
-  display:flex;
+  display: flex;
   flex-direction: row;
-  width:60%;
+  width: 60%;
   margin: 1rem;
   justify-content: center;
 }
 
-.searchbar{
-  display:flex;
+.searchbar {
+  display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 40%;
 }
 
-.welcomehome{
+.welcomehome {
   border: 1px solid black;
   background-color: aliceblue;
   margin: 1rem;
-  width:50%;
+  width: 50%;
   align-items: center;
   margin-left: 20%;
   margin-top: 5%;
+  margin-bottom: 43%;
 }
 
-#createId{
-  margin-left: 10rem ;
+#createId {
+  margin-left: 10rem;
   width: 10rem;
 }
 
-.logsign{
+.logsign {
   margin-right: 10%;
 }
 
-#log{
-  width:20rem;
+#log {
+  width: 20rem;
   margin-right: 10rem;
-  
 }
 
-.signupbar{
-  display:flex;
+.signupbar {
+  display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: center;
   margin-top: 5%;
 }
 
-.loginbar{
-  display:flex;
+.loginbar {
+  display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: center;
   margin-top: 5%;
 }
 
-.signinput{
-  margin: .5rem;
-  width:15%;
-  height:2rem;
+.signinput {
+  margin: 0.5rem;
+  width: 15%;
+  height: 2rem;
 }
 
-.logininput{
-  margin: .5rem;
-  width:15%;
-  height:2rem;
+.logininput {
+  margin: 0.5rem;
+  width: 15%;
+  height: 2rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: lightskyblue;
+  width: 100%;
+  height: 5rem;
+  position: sticky;
+  bottom: 0;
+  text-align: center;
+  justify-content: center;
+  font-size: 1.2rem;
 }
